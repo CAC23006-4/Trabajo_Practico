@@ -151,7 +151,7 @@ nav ul li a {
     text-align: center;
     }
     
- /*--------------------------------------carrusel  testimonios-------------------------------------------- */
+ /*--------------------------------------carrousel  testimonios-------------------------------------------- */
  #testimonios {
     text-align: center;
   }
@@ -166,8 +166,6 @@ nav ul li a {
     border-radius: 10px;
     padding: 1%;
     background-color: #1C2833;
-    
-    
   }
   
   .testimonial {
@@ -190,7 +188,7 @@ nav ul li a {
     font-weight: bold;
   }
   
-/* Estilos para el formulario de contacto */
+ /*--------------------------------------Formulario contacto-------------------------------------------- */
 #contacto {
     background-color: #1C2833;
     color: #fff;
@@ -232,7 +230,7 @@ nav ul li a {
     border: none;
 }
 
-/* Estilos para el formulario de registro */
+ /*--------------------------------------formulario registro-------------------------------------------- */
 #registro {
     background-color: #2D2D2D;
     color: #fff;
@@ -271,7 +269,7 @@ nav ul li a {
 }
 
 
-/* -----------------------------footer------------------------------------ */
+ /*--------------------------------------Footer-------------------------------------------- */
 .columna-footer {
   display: grid;
 }
