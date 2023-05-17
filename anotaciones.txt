@@ -1,0 +1,5 @@
+index: esta Ok salvo por el footer 
+Quienes somos : esta horrible hay que ponerlo lindo
+Cursos: esta Ok salvo por el footer 
+Testimonios: hay que hacerlo responsivo
+Contacto: tal vez podríamos meter mas campos al formulario?, ver el footer
