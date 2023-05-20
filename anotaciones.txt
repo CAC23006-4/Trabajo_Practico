@@ -3,3 +3,18 @@ Quienes somos : esta horrible hay que ponerlo lindo
 Cursos: esta Ok salvo por el footer 
 Testimonios: hay que hacerlo responsivo
 Contacto: tal vez podríamos meter mas campos al formulario?, ver el footer
+
+________________________________________________-
+saque links innecesarios del head
+agregue alt y title a las fotos
+arregle archivo css: unifique media queries, tabule el codigo
+index.html: arregle footer
+cursos: arregle boton y arregle media queries para que haya 3 cortes
+quienes-somos.html: armado
+testimonios: agregue estilo al titulo y modifique el color de los recuadros
+
+FALTA:
+- se puede meter mas campos al formularios}
+- testimoniones.html: EDITAR MEDIA queries
+- Subir a servidor y CORROBORAR que los estilos se vean bien
+- Editar botones en el footer para que se remarque el de cada documento html
