@@ -441,7 +441,19 @@ header {
     font-size: 20px;
     padding: 10px 30px;
     border: none;
-}
+
+} 
+
+#alerta {
+    display: block;
+    margin:  auto;
+    padding: 10px 30px;
+    background-color: #ce806d;
+    color: #ffffff;
+    text-align: center;
+    margin: 2rem;
+    border-radius: 10px;
+ }
 
 /*--------------------------------------formulario registro-------------------------------------------- */
 #registro {
@@ -699,3 +711,4 @@ footer img {
         font-size: 0.9rem;
     }
 }
+

@@ -1,129 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" href="img/icon.png">
-      <title>DigitalSkills - Cursos de Programación Online</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;500;700&display=swap" rel="stylesheet">
-      <!-- link para los fontawesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-      <link rel="stylesheet" href="css/stylesheet.css">
-      <!-- link para los iconos -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-      <!-- link para el js si le metemos algo-->
-      <link rel="js" href="js/js.js">
-   </head>
-   <body>
-      <header>
-         <img id="logo-interno" src="img/logo.png" alt="Logo Digital Skills" title="Digital Skills">
-         <nav class="barra">
-            
-            <div class="nav"><a href="index.html">Inicio</a></div>
-            <div class="nav"><a href="quienes_somos.html">Quienes Somos</a></div>
-            <div class="nav"><a href="cursos.html">Cursos</a></div>
-            <div class="nav"><a href="testimonios.html">Testimonios</a></div>
-            <div class="nav"><a href="contacto.html" class="current">Contacto</a></li></div>
-            
-         </nav>
-      </header>
-      <section id="contacto">
-         <h2 style="text-align: center;">Contáctanos</h2>
-         <form id="formulario-contacto" action="enviar.php" method="post" onsubmit="return validarFormulario()">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje"></textarea>
-            <input type="submit" value="Enviar">
-         </form>
-         <!-- validacion -->
-         <script>
-            function validarFormulario() {
-               var nombre = document.getElementById("nombre").value;
-               var apellido = document.getElementById("apellido").value;
-               var email = document.getElementById("email").value;
-               var mensaje = document.getElementById("mensaje").value;
-            
-               if (nombre == "") {
-                  alert("El campo Nombre es obligatorio.");
-                  return false;
-               }
-            
-               if (apellido == "") {
-                  alert("El campo Apellido es obligatorio.");
-                  return false;
-               }
-            
-               // Validar formato de correo electrónico
-               var regexEmail = /\S+@\S+\.\S+/;
-               if (!regexEmail.test(email)) {
-                  alert("El campo Email debe tener un formato de correo electrónico válido.");
-                  return false;
-               }
-            
-               if (mensaje == "") {
-                  alert("El campo Mensaje es obligatorio.");
-                  return false;
-               }
-               return true;
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="img/icon.png">
+   <title>DigitalSkills - Cursos de Programación Online</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;500;700&display=swap" rel="stylesheet">
+   <!-- link para los fontawesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <link rel="stylesheet" href="css/stylesheet.css">
+   <!-- link para los iconos -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+   <!-- link para el js si le metemos algo-->
+   <link rel="js" href="js/js.js">
+</head>
+
+<body>
+   <header>
+      <img id="logo-interno" src="img/logo.png" alt="Logo Digital Skills" title="Digital Skills">
+      <nav class="barra">
+
+         <div class="nav"><a href="index.html">Inicio</a></div>
+         <div class="nav"><a href="quienes_somos.html">Quienes Somos</a></div>
+         <div class="nav"><a href="cursos.html">Cursos</a></div>
+         <div class="nav"><a href="testimonios.html">Testimonios</a></div>
+         <div class="nav"><a href="contacto.html">Contacto</a></li>
+         </div>
+
+      </nav>
+   </header>
+   <section id="contacto">
+      <h2 style="text-align: center;">Contáctanos</h2>
+      <div id="alerta" style="display: none;">
+         <i class="fas fa-exclamation-circle"></i> <!-- Icono de alerta -->
+         <span id="alerta-mensaje"></span> <!-- Mensaje de alerta -->
+      </div>
+      <div class="container">
+         <div class="alerta-container">
+            <form id="formulario-contacto" action="enviar.php" method="post" onsubmit="return validarFormulario()">
+               <label for="nombre">Nombre:</label>
+               <input type="text" id="nombre" name="nombre">
+               <label for="apellido">Apellido:</label>
+               <input type="text" id="apellido" name="apellido">
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email">
+               <label for="mensaje">Mensaje:</label>
+               <textarea id="mensaje" name="mensaje"></textarea>
+               <input type="submit" value="Enviar">
+            </form>
+
+         </div>
+      </div>
+      <!-- validacion -->
+      <script>
+         function validarFormulario() {
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var email = document.getElementById("email").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            var alertaElement = document.getElementById("alerta");
+            var alertaMensajeElement = document.getElementById("alerta-mensaje");
+            alertaElement.style.display = "none"; // Ocultar la alerta
+            alertaMensajeElement.innerHTML = ""; // Limpiar el mensaje de alerta anterior
+
+            if (nombre == "") {
+               alertaMensajeElement.innerHTML = "El campo Nombre es obligatorio.";
+               alertaElement.style.display = "block";
+               return false;
             }
-            
-         </script>
-      </section>
-      <footer>
-         <h1><img src="img/logo.png" alt="logo Digital Skills">DIGITAL SKILLS</h1>
-         <div>
-            <div class="columnaFooter">
-               <div class="columnaTextoFooter">
-                  <h5>Nuestra empresa</h5>
-                  <p>"Somos una empresa líder en educación en línea, brindando cursos de alta
-                     calidad y accesibles a personas de todo el mundo. Nuestro objetivo es proporcionar oportunidades de
-                     aprendizaje flexibles e innovadoras para permitir el crecimiento y desarrollo de nuestros estudiantes
-                     en todos los ámbitos de la vida."
-                  </p>
-               </div>
-               <div class="columnaDatosFooter paddingNavegar">
-                  <h5>Navegar</h5>
-                  <ul>
-                     <li><i class="bi bi-arrow-right"></i><a href="#top"><strong>Inicio</strong></a></li>
-                     <li><i class="bi bi-arrow-right"></i><a href="quienes_somos.html">Quienes somos</a></li>
-                     <li><i class="bi bi-arrow-right"></i><a href="testimonios.html">Testimonios</a></li>
-                     <li><i class="bi bi-arrow-right"></i><a href="cursos.html">Quiero aprender</a></li>
-                     <li><i class="bi bi-arrow-right"></i><a href="contacto.html">Contáctenos</a></li>
-                  </ul>
-               </div>
-               <div class="columnaDatosFooter">
-                  <h5>¿Te podemos ayudar?</h5>
-                  <ul>
-                     <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/+54 9 011 4444444" target="_blank">+54 9 011
-                        4444444</a>
-                     </li>
-                     <li><i class="bi bi-instagram"></i><a href="#"> @DigitalSkills</a></li>
-                     <li><i class="bi bi-facebook"></i><a href="https://www.facebook.com/DigitalSkills" target="_blank">
-                        facebook.com/DSkills</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="columnaDatosFooter">
-                  <iframe
-                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398.76623411001276!2d-58.36242393188762!3d-34.61407800718945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3359cd27709a9%3A0xb377c0850b5842d4!2sOceana%20Puerto%20Madero!5e0!3m2!1ses!2sar!4v1679763482349!5m2!1ses!2sar"
-                     width="auto" height="200px" style="border:0;" allowfullscreen="" loading="lazy"
-                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-               </div>
-            </div>
-            <div>
-               <p class="piePagina"><i class="bi bi-code-square"></i> DigitalSkills Copyright 2023 - Todos los derechos
-                  reservados. <i class="bi bi-pc-display-horizontal"></i>
-                  Powered by Codo a Codo
+
+            if (apellido == "") {
+               alertaMensajeElement.innerHTML = "El campo Apellido es obligatorio.";
+               alertaElement.style.display = "block";
+               return false;
+            }
+
+            // Validar formato de correo electrónico
+            var regexEmail = /\S+@\S+\.\S+/;
+            if (!regexEmail.test(email)) {
+               alertaMensajeElement.innerHTML = "El campo Email debe tener un formato de correo electrónico válido.";
+               alertaElement.style.display = "block";
+               return false;
+            }
+
+            if (mensaje == "") {
+               alertaMensajeElement.innerHTML = "El campo Mensaje es obligatorio.";
+               alertaElement.style.display = "block";
+               return false;
+            }
+            return true;
+         }
+      </script>
+   </section>
+
+
+   <footer>
+      <h1><img src="img/logo.png" alt="logo Digital Skills">DIGITAL SKILLS</h1>
+      <div>
+         <div class="columnaFooter">
+            <div class="columnaTextoFooter">
+               <h5>Nuestra empresa</h5>
+               <p>"Somos una empresa líder en educación en línea, brindando cursos de alta
+                  calidad y accesibles a personas de todo el mundo. Nuestro objetivo es proporcionar oportunidades de
+                  aprendizaje flexibles e innovadoras para permitir el crecimiento y desarrollo de nuestros estudiantes
+                  en todos los ámbitos de la vida."
                </p>
             </div>
+            <div class="columnaDatosFooter paddingNavegar">
+               <h5>Navegar</h5>
+               <ul>
+                  <li><i class="bi bi-arrow-right"></i><a href="#top"><strong>Inicio</strong></a></li>
+                  <li><i class="bi bi-arrow-right"></i><a href="quienes_somos.html">Quienes somos</a></li>
+                  <li><i class="bi bi-arrow-right"></i><a href="testimonios.html">Testimonios</a></li>
+                  <li><i class="bi bi-arrow-right"></i><a href="cursos.html">Quiero aprender</a></li>
+                  <li><i class="bi bi-arrow-right"></i><a href="contacto.html">Contáctenos</a></li>
+               </ul>
+            </div>
+            <div class="columnaDatosFooter">
+               <h5>¿Te podemos ayudar?</h5>
+               <ul>
+                  <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/+54 9 011 4444444" target="_blank">+54 9 011
+                        4444444</a>
+                  </li>
+                  <li><i class="bi bi-instagram"></i><a href="#"> @DigitalSkills</a></li>
+                  <li><i class="bi bi-facebook"></i><a href="https://www.facebook.com/DigitalSkills" target="_blank">
+                        facebook.com/DSkills</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="columnaDatosFooter">
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398.76623411001276!2d-58.36242393188762!3d-34.61407800718945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3359cd27709a9%3A0xb377c0850b5842d4!2sOceana%20Puerto%20Madero!5e0!3m2!1ses!2sar!4v1679763482349!5m2!1ses!2sar"
+                  width="auto" height="200px" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
          </div>
-      </footer>
-   </body>
+         <div>
+            <p class="piePagina"><i class="bi bi-code-square"></i> DigitalSkills Copyright 2023 - Todos los derechos
+               reservados. <i class="bi bi-pc-display-horizontal"></i>
+               Powered by Codo a Codo
+            </p>
+         </div>
+      </div>
+   </footer>
+</body>
+
 </html>
