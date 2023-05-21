@@ -31,10 +31,12 @@
       </nav>
    </header>
    <section id="contacto">
-      <h2>Contáctanos</h2>
+      <h2 style="text-align: center;">Contáctanos</h2>
       <form id="formulario-contacto" action="enviar.php" method="post" onsubmit="return validarFormulario()">
          <label for="nombre">Nombre:</label>
          <input type="text" id="nombre" name="nombre">
+         <label for="apellido">Apellido:</label>
+         <input type="text" id="apellido" name="apellido">
          <label for="email">Email:</label>
          <input type="email" id="email" name="email">
          <label for="mensaje">Mensaje:</label>
@@ -46,11 +48,17 @@
       <script>
          function validarFormulario() {
             var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
             var email = document.getElementById("email").value;
             var mensaje = document.getElementById("mensaje").value;
 
             if (nombre == "") {
                alert("El campo Nombre es obligatorio.");
+               return false;
+            }
+
+            if (apellido  == "") {
+               alert("El campo Apellido es obligatorio.");
                return false;
             }
 
@@ -67,23 +75,23 @@
             }
             return true;
          }
-
+         
       </script>
    </section>
 
    <footer>
       <h1><img src="img/logo.png" alt="logo Digital Skills">DIGITAL SKILLS</h1>
       <div>
-         <div class="columna-footer">
-            <div>
+         <div class="columnaFooter">
+            <div class = "columnaTextoFooter">
                <h5>Nuestra empresa</h5>
-               <p class="parrafo-footer">"Somos una empresa líder en educación en línea, brindando cursos de alta
+               <p>"Somos una empresa líder en educación en línea, brindando cursos de alta
                   calidad y accesibles a personas de todo el mundo. Nuestro objetivo es proporcionar oportunidades de
                   aprendizaje flexibles e innovadoras para permitir el crecimiento y desarrollo de nuestros estudiantes
                   en todos los ámbitos de la vida."</p>
             </div>
-            <div>
-               <h5>Mapa de sitio</h5>
+            <div class ="columnaDatosFooter paddingNavegar">
+               <h5>Navegar</h5>
                <ul>
                   <li><i class="bi bi-arrow-right"></i><a href="#top"><strong>Inicio</strong></a></li>                    
                   <li><i class="bi bi-arrow-right"></i><a href="quienes_somos.html">Quienes somos</a></li>
@@ -92,25 +100,26 @@
                   <li><i class="bi bi-arrow-right"></i><a href="contacto.html">Contáctenos</a></li>
               </ul>
             </div>
-            <div>
-               <h5>¿Te podemos ayudar</h5>
+            <div class ="columnaDatosFooter">
+               <h5>¿Te podemos ayudar?</h5>
                <ul>
                   <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/+54 9 011 4444444"
                      target="_blank">+54 9 011 4444444</a></li>
                   <li><i class="bi bi-instagram"></i><a href="#"> @DigitalSkills</a></li>
                   <li><i class="bi bi-facebook"></i><a href="https://www.facebook.com/DigitalSkills" target="_blank">
-                     facebook.com/DigitalSkills</a></li>
+                     facebook.com/DSkills</a></li>
               </ul>
             </div>
-            <div class="iframe"  style="  grid-column: 1 / span 3;
-            grid-row: 3;">
+            <div class="columnaDatosFooter">
                <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398.76623411001276!2d-58.36242393188762!3d-34.61407800718945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3359cd27709a9%3A0xb377c0850b5842d4!2sOceana%20Puerto%20Madero!5e0!3m2!1ses!2sar!4v1679763482349!5m2!1ses!2sar"
-                  width="100%" height="150px" style="border:0;" allowfullscreen="" loading="lazy"
+                  width="auto" height="200px" style="border:0;" allowfullscreen="" loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  <p class="pie"><i class="bi bi-code-square"></i> DigitalSkills Copyright 2023 - Todos los derechos reservados. <i class="bi bi-pc-display-horizontal"></i>
-                     Powered by Codo a Codo</p>
             </div>
+         </div>
+         <div>
+            <p class="piePagina"><i class="bi bi-code-square"></i> DigitalSkills Copyright 2023 - Todos los derechos reservados. <i class="bi bi-pc-display-horizontal"></i>
+               Powered by Codo a Codo</p>
          </div>
       </div>
    </footer>
