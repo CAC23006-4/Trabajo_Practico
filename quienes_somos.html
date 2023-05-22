@@ -140,7 +140,7 @@
                   <script>
                      const fechaHoraElement = document.getElementById('fecha-hora');
                      function obtenerFechaHora() {
-                        fetch('http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires')
+                        fetch('https://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires')
                            .then(response => response.json())
                            .then(data => {
                               const fechaHora = new Date(data.datetime);
