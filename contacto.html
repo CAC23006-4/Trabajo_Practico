@@ -228,8 +228,30 @@
             </ul>
           </div>
           <div class="columnaDatosFooter">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398.76623411001276!2d-58.36242393188762!3d-34.61407800718945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3359cd27709a9%3A0xb377c0850b5842d4!2sOceana%20Puerto%20Madero!5e0!3m2!1ses!2sar!4v1679763482349!5m2!1ses!2sar" width="auto" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+            <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398.76623411001276!2d-58.36242393188762!3d-34.61407800718945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3359cd27709a9%3A0xb377c0850b5842d4!2sOceana%20Puerto%20Madero!5e0!3m2!1ses!2sar!4v1679763482349!5m2!1ses!2sar"
+               width="auto" height="200px" style="border:0;" allowfullscreen="" loading="lazy"
+               referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="fecha-hora"></div>
+            <!-- consuminos una api que trae fecha y hora -->
+            <script>
+               const fechaHoraElement = document.getElementById('fecha-hora');
+               function obtenerFechaHora() {
+                  fetch('http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires')
+                     .then(response => response.json())
+                     .then(data => {
+                        const fechaHora = new Date(data.datetime);
+                        const options = { dateStyle: 'full', timeStyle: 'long' };
+                        fechaHoraElement.textContent = fechaHora.toLocaleString('es-AR', options);
+                     })
+                     .catch(error => {
+                        console.error('Error al obtener la fecha y hora:', error);
+                     });
+               }
+               obtenerFechaHora();
+               setInterval(obtenerFechaHora, 1000);
+            </script>
+         </div>
         </div>
         <div>
           <p class="piePagina">

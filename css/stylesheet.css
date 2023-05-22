@@ -344,6 +344,7 @@
   /*--------------------------------------carrousel  testimonios-------------------------------------------- */
   #testimonios {
     text-align: center;
+    
   }
   .testimonial {
     flex: 0 0 auto;
@@ -593,6 +594,10 @@
   .piePagina {
     font-size: 1rem;
     margin-top: 1rem;
+  }
+
+  #fecha-hora{
+    font-size: 12px;
   }
   
   .video-container {
